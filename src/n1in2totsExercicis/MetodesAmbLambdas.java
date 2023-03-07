@@ -1,6 +1,7 @@
 package n1in2totsExercicis;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -152,7 +153,7 @@ public class MetodesAmbLambdas {
     /* Exercici 6 nivell 1 */
     public void ordenarPerLongitudCurtaALlarga(List<String> list) {
         list.stream()
-                .sorted((s,t)->s.length()-t.length())
+                .sorted(Comparator.comparingInt(String::length))
                 .forEach(System.out::println);
     }
 
@@ -197,7 +198,7 @@ public class MetodesAmbLambdas {
     /* Exercici 4 nivell 2 */
     public List<String> ordenarAlfabetic(List<String> list) {
         return  list.stream()
-                .sorted((s,t)-> {return s.charAt(0)-t.charAt(0);})
+                .sorted(Comparator.comparingInt(s -> s.charAt(0)))
                 .peek(System.out::println)
                 .collect(Collectors.toList());
     }
