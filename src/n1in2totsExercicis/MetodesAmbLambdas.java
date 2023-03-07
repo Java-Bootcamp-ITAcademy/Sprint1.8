@@ -205,17 +205,7 @@ public class MetodesAmbLambdas {
     /* Exercici 4 nivell 2 */
     public List<String> lesEPrimer(List<String> list) {
         return list.stream()
-                .sorted((s,t)-> {
-                    if(s.contains("E")&&!t.contains("E")) {
-                        return -1;
-                    }
-                    else if(t.contains("E")&&!s.contains("E")) {
-                        return 1;
-                    }
-                    else {
-                        return s.compareTo(t);
-                    }
-                })
+                .sorted((s,t)-> s.contains("E")&&!t.contains("E")? -1 : ((t.contains("E")&&!s.contains("E")? 1: s.compareTo(t))))
                 .peek(System.out::println)
                 .collect(Collectors.toList());
     }
