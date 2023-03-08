@@ -9,10 +9,10 @@ public class Alumne {
     private double nota;
 
     public Alumne(String nom, int edat, String curs, double nota) {
-        setNom(nom);
-        setEdat(edat);
-        setCurs(curs);
-        setNota(nota);
+        this.nom=nom;
+        this.curs=curs;
+        this.edat=edat;
+        this.nota=nota;
     }
 
     public String getNom() {
